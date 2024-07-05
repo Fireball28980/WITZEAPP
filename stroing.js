@@ -15,3 +15,11 @@ export function saveJoke(joke) {
   const newSavedJokes = [joke, ...savedJokes];
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newSavedJokes));
 }
+
+export function removeJoke(index) {
+  const newSavedJokes = getSavedJokes();
+
+  newSavedJokes.splice(index, 1);
+
+  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newSavedJokes));
+}
